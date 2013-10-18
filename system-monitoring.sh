@@ -4,6 +4,8 @@
 service httpd fullstatus
 # get all currently established http connections 
 netstat -pant | grep httpd | grep -c ESTAB
+# watch error_log 
+tail -f /var/log/httpd/error_log
 
 # get all currently waiting http connections
 netstat -pant | grep httpd | grep -c WAIT
