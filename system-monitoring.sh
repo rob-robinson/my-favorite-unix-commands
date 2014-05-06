@@ -45,3 +45,10 @@ iostat
 
 # interval reports on various system statistics...
 sar
+
+
+
+# how much ram is apache using ?
+
+ps aux | grep httpd | awk '{sum += $6} END {print sum / 1024}'
+
